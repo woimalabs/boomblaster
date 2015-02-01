@@ -6,8 +6,8 @@
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
+#include "boomblaster/AudioEngine.hpp"
 #include "AudioEnginePrivate.hpp"
-#include "helpers/AudioEngine.hpp"
 #include "helpers/Exception.hpp"
 #include "helpers/Lock.hpp"
 #include "helpers/Log.hpp"

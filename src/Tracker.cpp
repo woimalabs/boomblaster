@@ -11,7 +11,7 @@
 #include "helpers/Lock.hpp"
 #include "helpers/Exception.hpp"
 #include "helpers/Log.hpp"
-#include "helpers/Helpers.hpp"
+#include "helpers/Utilities.hpp"
 #include <stdint.h>
 
 namespace bb

@@ -9,7 +9,6 @@
 #ifndef BB_AUDIOASSET
 #define BB_AUDIOASSET
 
-#include "bb/Class.hpp"
 #include <string>
 
 /**
@@ -23,8 +22,6 @@ namespace bb
     class AudioAsset
     {
     public:
-        BB_CLASS_COPYABLE(AudioAsset)
-
         /**
          * Creates audio asset
          *
@@ -35,6 +32,12 @@ namespace bb
          */
         AudioAsset(const std::string& filename, bool parallelPlay = false, bool looping = false);
         ~AudioAsset();
+
+        /**
+         * AudioAsset class is copyable.
+         */
+        AudioAsset(AudioAsset const& instance);
+        AudioAsset& operator=(AudioAsset const& r);
 
         /**
          * Plays the sample.

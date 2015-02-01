@@ -9,8 +9,8 @@
 #ifndef BB_RINGBUFFER
 #define BB_RINGBUFFER
 
-#include "w/base/Class.hpp"
-#include "w/base/Exception.hpp"
+#include "helpers/Class.hpp"
+#include "helpers/Exception.hpp"
 
 namespace bb
 {
@@ -80,8 +80,8 @@ namespace bb
         }
 
     private:
-        T* buffer_;
         size_t size_;
+        T* buffer_;
 
         // Volatile to keep values in registers
         volatile size_t readIndex_;

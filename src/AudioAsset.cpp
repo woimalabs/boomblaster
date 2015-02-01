@@ -6,9 +6,9 @@
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
+#include "boomblaster/AudioAsset.hpp"
 #include "AudioEnginePrivate.hpp"
 #include "AudioAssetPrivate.hpp"
-#include "helpers/AudioAsset.hpp"
 #include "helpers/Log.hpp"
 
 namespace bb

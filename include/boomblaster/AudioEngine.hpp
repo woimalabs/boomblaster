@@ -9,8 +9,6 @@
 #ifndef BB_AUDIOENGINE
 #define BB_AUDIOENGINE
 
-#include "bb/ResourceManager.hpp"
-#include "bb/Class.hpp"
 #include <string>
 
 /**
@@ -23,20 +21,23 @@ namespace bb
     class AudioEngine
     {
     public:
-        BB_CLASS_UNCOPYABLE(AudioEngine)
-
         /**
          * Creates AudioEngine instance which makes possible to play AudioAssets.
          *
          * @param [in]  mute            Is mute on or off at start.
          * @param [in]  resourceManager Manages loading of files
          */
-        AudioEngine(bool mute, ResourceManager& resourceManager);
+        AudioEngine(bool mute);
         ~AudioEngine();
         static void setMute(bool);
         static bool mute();
 
     private:
+        /**
+         * AudioEngine class is not copyable.
+         */
+        AudioEngine(AudioEngine const& instance);
+        AudioEngine& operator=(AudioEngine const& r);
         static class AudioEnginePrivate* private_;
     };
 }

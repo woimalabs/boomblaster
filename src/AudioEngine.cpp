@@ -6,22 +6,24 @@
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#include "bb/AudioEngine.hpp"
+#include "boomblaster/AudioEngine.hpp"
 #include "AudioEnginePrivate.hpp"
 #include "helpers/Log.hpp"
 #include "helpers/Exception.hpp"
+#include "helpers/ResourceManager.hpp"
 
 namespace bb
 {
     AudioEnginePrivate* AudioEngine::private_ = NULL;
 
-    AudioEngine::AudioEngine(bool mute, ResourceManager& resourceManager)
+    AudioEngine::AudioEngine(bool mute)
     {
         if(private_ != NULL)
         {
             throw Exception("Only one AudioEngine can exist once.");
         }
-        private_ = new AudioEnginePrivate(mute, resourceManager);
+        ResourceManager tmp(".");
+        private_ = new AudioEnginePrivate(mute, tmp);
         LOGI("Created AudioEngine.")
     }
 
