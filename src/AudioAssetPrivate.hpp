@@ -14,6 +14,7 @@
 #include "helpers/Class.hpp"
 #include "helpers/Referenced.hpp"
 #include "helpers/ReferencedPointer.hpp"
+#include "helpers/Mutex.hpp"
 #include <string>
 #include <set>
 
@@ -22,7 +23,7 @@ namespace bb
     class AudioAssetPrivate: public Referenced
     {
     public:
-        UNCOPYABLE(AudioAssetPrivate)
+        BB_CLASS_UNCOPYABLE(AudioAssetPrivate)
 
         AudioAssetPrivate(const std::string& filename, bool parallelPlay, bool looping);
         ~AudioAssetPrivate();

@@ -35,7 +35,7 @@ namespace bb
     class AudioEnginePrivate
     {
     public:
-        UNCOPYABLE(AudioEnginePrivate)
+        BB_CLASS_UNCOPYABLE(AudioEnginePrivate)
 
         friend class AudioEngine;
 

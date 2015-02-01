@@ -22,7 +22,7 @@ namespace bb
     class Tracker
     {
     public:
-        UNCOPYABLE(Tracker);
+        BB_CLASS_UNCOPYABLE(Tracker);
 
         static unsigned int const TrackAmount = 4;
         static unsigned int const VolumeTransitionMilliSeconds = 450;

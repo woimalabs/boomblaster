@@ -44,7 +44,7 @@ static void stream_state_callback(pa_stream *s, void* ptr)
 
 static void stream_write_callback(pa_stream* stream, size_t size, void* ptr)
 {
-    w::audio::AudioEnginePrivate* self = (w::audio::AudioEnginePrivate*)ptr;
+    bb::AudioEnginePrivate* self = (bb::AudioEnginePrivate*)ptr;
     self->writeCallback(size);
 }
 

@@ -9,6 +9,7 @@
 #ifndef BB_AUDIORESOURCE
 #define BB_AUDIORESOURCE
 
+#include "helpers/Class.hpp"
 #include "helpers/Resource.hpp"
 #include "helpers/FileHandle.hpp"
 #include <string>
@@ -19,6 +20,8 @@ namespace bb
     class AudioResource: public Resource
     {
     public:
+        BB_CLASS_UNCOPYABLE(AudioResource)
+
         AudioResource(FileHandle* fileHandle);
         ~AudioResource();
         unsigned int channels() const;

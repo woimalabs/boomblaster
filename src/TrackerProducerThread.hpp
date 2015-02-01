@@ -19,7 +19,7 @@ namespace bb
     class TrackerProducerThread: public Thread
     {
     public:
-        UNCOPYABLE(TrackerProducerThread)
+        BB_CLASS_UNCOPYABLE(TrackerProducerThread);
 
     protected:
         void threadFunction();

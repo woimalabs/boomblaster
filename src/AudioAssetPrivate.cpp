@@ -10,7 +10,8 @@
 #include "AudioEnginePrivate.hpp"
 #include "TrackerSample.hpp"
 #include "helpers/Log.hpp"
-//?: #include "w/base/Helpers.hpp"
+#include "helpers/Utilities.hpp"
+#include "helpers/Lock.hpp"
 
 namespace bb
 {
@@ -33,7 +34,7 @@ namespace bb
         bool r = false;
 
         // Sanity check for volume value
-        volume = w::clamp(volume, 0.0f, 1.0f);
+        volume = bb::clamp(volume, 0.0f, 1.0f);
 
         LOCK
 
@@ -70,7 +71,7 @@ namespace bb
     void AudioAssetPrivate::setVolume(float volume)
     {
         // Sanity check for the new value
-        volume = w::clamp(volume, 0.0f, 1.0f);
+        volume = bb::clamp(volume, 0.0f, 1.0f);
 
         // Tune volume of this asset's trackersamples
         LOCK
@@ -85,7 +86,7 @@ namespace bb
     void AudioAssetPrivate::fadeOut(unsigned int fadeOutTimeMilliseconds)
     {
         // Sanity check for the new value
-        fadeOutTimeMilliseconds = w::clamp(fadeOutTimeMilliseconds, 0, 1000);
+        fadeOutTimeMilliseconds = bb::clamp(fadeOutTimeMilliseconds, 0, 1000);
 
         // Fade out the playing samples. This also disconnects the "ended"
         // signal listening.

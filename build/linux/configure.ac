@@ -1,4 +1,4 @@
-AC_INIT([boomblaster], 0.1)
+AC_INIT([libboomblaster], 0.1)
 AC_CONFIG_MACRO_DIR([build])
 AC_CONFIG_AUX_DIR([build])
 AC_CONFIG_HEADERS([config.h])
