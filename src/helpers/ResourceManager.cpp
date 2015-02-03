@@ -38,12 +38,13 @@ namespace bb
 
     ResourceManager::~ResourceManager()
     {
+        LOG
         private_->decrement();
     }
 
     ResourceManager& ResourceManager::operator=(ResourceManager const& r)
     {
-        if (this != &r)
+        if(this != &r)
         {
             private_ = r.private_;
             private_->increment();

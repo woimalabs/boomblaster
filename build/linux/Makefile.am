@@ -12,6 +12,10 @@ libboomblaster_la_SOURCES = \
 	../../src/helpers/ResourceManager.cpp \
 	../../src/helpers/ResourceManagerPrivate.cpp \
 	../../src/helpers/FileHandle.cpp \
+	../../src/helpers/Thread.cpp \
+	../../src/helpers/Mutex.cpp \
+	../../src/helpers/Timer.cpp \
+	../../src/helpers/Log.cpp \
 	../../src/AudioResource.cpp \
 	../../src/AudioAssetPrivate.cpp \
 	../../src/AudioAsset.cpp \

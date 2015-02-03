@@ -10,16 +10,8 @@
 
 int main(int argc, char *argv[])
 {
-    try
-    {
-        DummyApplication dummyApplication;
-        dummyApplication.run();
-    }
-    catch(...)
-    {
-        LOGE("Unknown exception");
-    }
-
+    DummyApplication dummyApplication;
+    dummyApplication.run();
     return 0;
 }
 

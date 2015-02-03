@@ -95,7 +95,13 @@ namespace bb
 #endif
 
     private:
-        AudioEnginePrivate(bool mute, ResourceManager& resourceManager);
+#ifdef ANDROID
+        AudioEnginePrivate(bool mute, AAssetManager* androidAssetManager);
+#elif __linux__
+        AudioEnginePrivate(bool mute, const std::string& basePath);
+#elif __APPLE__
+        AudioEnginePrivate(bool mute);
+#endif
         ~AudioEnginePrivate();
         static AudioEnginePrivate* singleton_;
         ResourceManager resourceManager_; // Holding a reference so that AudioEnginePrivate can call ResourceManagerPrivate functions safely

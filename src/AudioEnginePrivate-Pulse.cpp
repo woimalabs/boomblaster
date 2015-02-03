@@ -52,8 +52,8 @@ namespace bb
 {
     AudioEnginePrivate* AudioEnginePrivate::singleton_ = NULL;
 
-    AudioEnginePrivate::AudioEnginePrivate(bool mute, ResourceManager& resourceManager):
-        resourceManager_(resourceManager),
+    AudioEnginePrivate::AudioEnginePrivate(bool mute, const std::string& basePath):
+        resourceManager_(basePath),
         tracker_(mute),
         mainloop_(NULL),
         context_(NULL),

@@ -29,13 +29,12 @@ namespace bb
             throw Exception("Only one AudioEngine can exist once.");
         }
 #ifdef ANDROID
-        ResourceManager resourceManager(androidAssetManager);
+        private_ = new AudioEnginePrivate(mute, androidAssetManager);
 #elif __linux__
-        ResourceManager resourceManager(basePath);
+        private_ = new AudioEnginePrivate(mute, basePath);
 #elif __APPLE__
-        ResourceManager resourceManager();
+        private_ = new AudioEnginePrivate(mute);
 #endif
-        private_ = new AudioEnginePrivate(mute, resourceManager);
         LOGI("Created AudioEngine.")
     }
 

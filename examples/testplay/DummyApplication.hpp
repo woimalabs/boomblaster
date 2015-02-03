@@ -9,17 +9,17 @@
 #ifndef TESTPLAY_DUMMYAPPLICATION
 #define TESTPLAY_DUMMYAPPLICATION
 
-#include <bb/AudioEngine.hpp>
-#include <bb/AudioAsset.hpp>
+#include <boomblaster/AudioEngine.hpp>
+#include <boomblaster/AudioAsset.hpp>
+#include <unistd.h>
 
 class DummyApplication
 {
 public:
     DummyApplication():
         audioEngine_(true, "./"),
-        audioAsset_("teleport.wav"),
+        audioAsset_("teleport.wav")
     {
-
     }
 
     ~DummyApplication()
@@ -29,6 +29,7 @@ public:
     void run()
     {
         audioAsset_.play();
+        sleep(2);
     }
 
 private:

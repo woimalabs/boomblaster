@@ -6,6 +6,6 @@ includedir=@includedir@
 Name: boomblaster
 Description: Audio library
 Version: 0.1
-Libs: -L${libdir} -lpthread -lpulse
+Libs: -L${libdir} -lboomblaster -lpthread -lpulse
 Cflags: -I${includedir} -I/usr/local/include/boomblaster
 Requires:
