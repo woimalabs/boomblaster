@@ -8,4 +8,4 @@ Description: Audio library
 Version: 0.1
 Libs: -L${libdir} -lpthread -lpulse
 Cflags: -I${includedir} -I/usr/local/include/boomblaster
-Requires: pulse
+Requires:
