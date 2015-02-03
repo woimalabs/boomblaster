@@ -1,23 +1,23 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_RINGBUFFER
-#define BB_RINGBUFFER
+#ifndef BOOMBOX_RINGBUFFER
+#define BOOMBOX_RINGBUFFER
 
 #include "helpers/Class.hpp"
 #include "helpers/Exception.hpp"
 
-namespace bb
+namespace boombox
 {
     template <class T> class RingBuffer
     {
     public:
-        BB_CLASS_UNCOPYABLE(RingBuffer)
+        BOOMBOX_CLASS_UNCOPYABLE(RingBuffer)
 
         /**
          * Creates one producer - one consumer ring buffer.

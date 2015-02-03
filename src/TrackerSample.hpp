@@ -1,20 +1,20 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_TRACKERSAMPLE
-#define BB_TRACKERSAMPLE
+#ifndef BOOMBOX_TRACKERSAMPLE
+#define BOOMBOX_TRACKERSAMPLE
 
 #include "AudioResource.hpp"
 #include "helpers/ReferencedPointer.hpp"
 #include "helpers/Mutex.hpp"
 #include <stdint.h>
 
-namespace bb
+namespace boombox
 {
     class TrackerSampleObserver
     {

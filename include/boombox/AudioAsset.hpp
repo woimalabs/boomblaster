@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_AUDIOASSET
-#define BB_AUDIOASSET
+#ifndef BOOMBOX_AUDIOASSET
+#define BOOMBOX_AUDIOASSET
 
 #include <string>
 
@@ -17,7 +17,7 @@
  * Supported format(s):
  *  - wav, PCM mono 44100Hz 16bit, signed integer, linear, little endian
  */
-namespace bb
+namespace boombox
 {
     class AudioAsset
     {

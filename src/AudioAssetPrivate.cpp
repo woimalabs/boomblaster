@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -13,7 +13,7 @@
 #include "helpers/Utilities.hpp"
 #include "helpers/Lock.hpp"
 
-namespace bb
+namespace boombox
 {
     AudioAssetPrivate::AudioAssetPrivate(const std::string& filename, bool parallelPlay, bool looping):
         Referenced(),
@@ -28,6 +28,7 @@ namespace bb
         // End playing
         fadeOut(0);
 
+        // Wait that playing ends
         while(playing_.size() > 0);
     }
 
@@ -36,7 +37,7 @@ namespace bb
         bool r = false;
 
         // Sanity check for volume value
-        volume = bb::clamp(volume, 0.0f, 1.0f);
+        volume = boombox::clamp(volume, 0.0f, 1.0f);
 
         LOCK
 
@@ -44,7 +45,6 @@ namespace bb
         {
             LOGD("parallelPlay: %d, file %s", parallerPlay_, resource_.pointer()->filename().c_str());
             ReferencedPointer<TrackerSample> tmp(new TrackerSample(resource_, volume, looping_, this));
-            // tmp.pointer()->audioAssetInterestedFromEnd = tmp.pointer()->ended.connect(sigc::mem_fun(this, &AudioAssetPrivate::handleTrackerSampleEnd));
             r = AudioEnginePrivate::play(tmp);
             if(r == true)
             {
@@ -73,7 +73,7 @@ namespace bb
     void AudioAssetPrivate::setVolume(float volume)
     {
         // Sanity check for the new value
-        volume = bb::clamp(volume, 0.0f, 1.0f);
+        volume = boombox::clamp(volume, 0.0f, 1.0f);
 
         // Tune volume of this asset's trackersamples
         LOCK
@@ -88,7 +88,7 @@ namespace bb
     void AudioAssetPrivate::fadeOut(unsigned int fadeOutTimeMilliseconds)
     {
         // Sanity check for the new value
-        fadeOutTimeMilliseconds = bb::clamp(fadeOutTimeMilliseconds, 0, 1000);
+        fadeOutTimeMilliseconds = boombox::clamp(fadeOutTimeMilliseconds, 0, 1000);
 
         // Fade out the playing samples. This also disconnects the "ended"
         // signal listening.

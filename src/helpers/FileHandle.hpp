@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_FILEHANDLE
-#define BB_FILEHANDLE
+#ifndef BOOMBOX_FILEHANDLE
+#define BOOMBOX_FILEHANDLE
 
 #include "helpers/Exception.hpp"
 #include <stdio.h>
@@ -20,7 +20,7 @@
     #include <android/asset_manager_jni.h>
 #endif
 
-namespace bb
+namespace boombox
 {
     class FileHandle
     {

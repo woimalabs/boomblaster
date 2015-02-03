@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_RESOURCEMANAGER
-#define BB_RESOURCEMANAGER
+#ifndef BOOMBOX_RESOURCEMANAGER
+#define BOOMBOX_RESOURCEMANAGER
 
 #include <w/base/Class.hpp>
 #include <string>
@@ -18,7 +18,7 @@
     #include <android/asset_manager_jni.h>
 #endif
 
-namespace bb
+namespace boombox
 {
     class ResourceManager
     {

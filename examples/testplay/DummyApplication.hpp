@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -9,16 +9,16 @@
 #ifndef TESTPLAY_DUMMYAPPLICATION
 #define TESTPLAY_DUMMYAPPLICATION
 
-#include <boomblaster/AudioEngine.hpp>
-#include <boomblaster/AudioAsset.hpp>
+#include <boombox/AudioEngine.hpp>
+#include <boombox/AudioAsset.hpp>
 #include <unistd.h>
 
 class DummyApplication
 {
 public:
     DummyApplication():
-        audioEngine_(true, "./"),
-        audioAsset_("teleport.wav")
+        audioEngine_(false, "."),
+        audioAsset_("teleport.wav", true)
     {
     }
 
@@ -33,8 +33,8 @@ public:
     }
 
 private:
-    bb::AudioEngine audioEngine_;
-    bb::AudioAsset audioAsset_;
+    boombox::AudioEngine audioEngine_;
+    boombox::AudioAsset audioAsset_;
 };
 
 #endif

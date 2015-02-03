@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_AUDIOASSETPRIVATE
-#define BB_AUDIOASSETPRIVATE
+#ifndef BOOMBOX_AUDIOASSETPRIVATE
+#define BOOMBOX_AUDIOASSETPRIVATE
 
 #include "AudioResource.hpp"
 #include "TrackerSample.hpp"
@@ -19,12 +19,12 @@
 #include <list>
 #include <set>
 
-namespace bb
+namespace boombox
 {
     class AudioAssetPrivate: public Referenced, private TrackerSampleObserver
     {
     public:
-        BB_CLASS_UNCOPYABLE(AudioAssetPrivate)
+        BOOMBOX_CLASS_UNCOPYABLE(AudioAssetPrivate)
 
         AudioAssetPrivate(const std::string& filename, bool parallelPlay, bool looping);
         ~AudioAssetPrivate();

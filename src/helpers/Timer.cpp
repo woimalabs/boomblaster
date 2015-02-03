@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -16,7 +16,7 @@
     #include <mach/mach_time.h>
 #endif
 
-namespace bb
+namespace boombox
 {
     Timer::Timer()
     {

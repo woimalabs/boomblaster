@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <errno.h>
 
-namespace bb
+namespace boombox
 {
     Mutex::Mutex()
     {

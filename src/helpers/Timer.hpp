@@ -1,18 +1,18 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_TIMER
-#define BB_TIMER
+#ifndef BOOMBOX_TIMER
+#define BOOMBOX_TIMER
 
 #include <time.h>
 #include <stdint.h> // For uint64_t
 
-namespace bb
+namespace boombox
 {
     class Timer
     {

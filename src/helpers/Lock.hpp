@@ -1,20 +1,20 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_LOCK
-#define BB_LOCK
+#ifndef BOOMBOX_LOCK
+#define BOOMBOX_LOCK
 
 #include "helpers/Mutex.hpp"
 
-#define LOCK bb::Lock lock(mutex_);
-#define LOCK_(x) bb::Lock lock(x);
+#define LOCK boombox::Lock lock(mutex_);
+#define LOCK_(x) boombox::Lock lock(x);
 
-namespace bb
+namespace boombox
 {
     class Lock
     {

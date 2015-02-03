@@ -1,4 +1,4 @@
-AC_INIT([libboomblaster], 0.1)
+AC_INIT([libboombox], 0.1)
 AC_CONFIG_MACRO_DIR([build])
 AC_CONFIG_AUX_DIR([build])
 AC_CONFIG_HEADERS([config.h])
@@ -13,7 +13,7 @@ CPPFLAGS="$CPPFLAGS \
     -I../../include \
     -L/usr/local/lib"
 
-AC_CONFIG_FILES([Makefile boomblaster.pc])
+AC_CONFIG_FILES([Makefile boombox.pc])
 
 AC_OUTPUT
 

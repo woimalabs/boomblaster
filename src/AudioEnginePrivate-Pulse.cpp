@@ -1,12 +1,12 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#include "boomblaster/AudioEngine.hpp"
+#include "boombox/AudioEngine.hpp"
 #include "AudioEnginePrivate.hpp"
 #include "helpers/Exception.hpp"
 #include "helpers/Lock.hpp"
@@ -44,11 +44,11 @@ static void stream_state_callback(pa_stream *s, void* ptr)
 
 static void stream_write_callback(pa_stream* stream, size_t size, void* ptr)
 {
-    bb::AudioEnginePrivate* self = (bb::AudioEnginePrivate*)ptr;
+    boombox::AudioEnginePrivate* self = (boombox::AudioEnginePrivate*)ptr;
     self->writeCallback(size);
 }
 
-namespace bb
+namespace boombox
 {
     AudioEnginePrivate* AudioEnginePrivate::singleton_ = NULL;
 
@@ -71,7 +71,7 @@ namespace bb
         pa_threaded_mainloop_lock (mainloop_);
         {
             // Get a context
-            context_ = pa_context_new (pa_threaded_mainloop_get_api (mainloop_), "boomblaster");
+            context_ = pa_context_new (pa_threaded_mainloop_get_api (mainloop_), "boombox");
             if(context_ == NULL)
             {
                 LOGE("pa_context_new failed");
@@ -131,7 +131,7 @@ namespace bb
             spec.rate = 44100;
             spec.channels = 1;
 
-            stream_ = pa_stream_new(context_, "boomblaster", &spec, NULL);
+            stream_ = pa_stream_new(context_, "boombox", &spec, NULL);
             pa_stream_set_state_callback(stream_, stream_state_callback, mainloop_);
             pa_stream_set_write_callback(stream_, stream_write_callback, this);
 

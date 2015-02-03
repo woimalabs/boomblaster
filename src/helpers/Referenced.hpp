@@ -1,19 +1,19 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_REFERENCED
-#define BB_REFERENCED
+#ifndef BOOMBOX_REFERENCED
+#define BOOMBOX_REFERENCED
 
 #include "helpers/Lock.hpp"
 #include "helpers/Log.hpp"
 #include <cstddef>
 
-namespace bb
+namespace boombox
 {
     class ReferencedObserver
     {

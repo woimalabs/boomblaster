@@ -1,17 +1,17 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_EXCEPTION
-#define BB_EXCEPTION
+#ifndef BOOMBOX_EXCEPTION
+#define BOOMBOX_EXCEPTION
 
 #include <stdexcept>
 
-namespace bb
+namespace boombox
 {
     class Exception: public std::exception
     {

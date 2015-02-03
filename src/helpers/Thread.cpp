@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -13,7 +13,7 @@
 #include <errno.h>
 #include <stdexcept>
 
-namespace bb
+namespace boombox
 {
     void* threadFunction_(void* instance)
     {

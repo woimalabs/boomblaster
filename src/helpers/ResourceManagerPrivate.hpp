@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_RESOURCEMANAGERPRIVATE
-#define BB_RESOURCEMANAGERPRIVATE
+#ifndef BOOMBOX_RESOURCEMANAGERPRIVATE
+#define BOOMBOX_RESOURCEMANAGERPRIVATE
 
 #include "helpers/Resource.hpp"
 #include "helpers/Referenced.hpp"
@@ -23,7 +23,7 @@
     #include <android/asset_manager_jni.h>
 #endif
 
-namespace bb
+namespace boombox
 {
     class ResourceManagerPrivate: public Referenced, private ReferencedObserver
     {

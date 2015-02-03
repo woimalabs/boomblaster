@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_AUDIOENGINEPRIVATE
-#define BB_AUDIOENGINEPRIVATE
+#ifndef BOOMBOX_AUDIOENGINEPRIVATE
+#define BOOMBOX_AUDIOENGINEPRIVATE
 
 #include "Tracker.hpp"
 #include "TrackerSample.hpp"
@@ -30,12 +30,12 @@
     #include <pulse/pulseaudio.h>
 #endif
 
-namespace bb
+namespace boombox
 {
     class AudioEnginePrivate
     {
     public:
-        BB_CLASS_UNCOPYABLE(AudioEnginePrivate)
+        BOOMBOX_CLASS_UNCOPYABLE(AudioEnginePrivate)
 
         friend class AudioEngine;
 

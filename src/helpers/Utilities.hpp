@@ -1,15 +1,15 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_HELPERS
-#define BB_HELPERS
+#ifndef BOOMBOX_HELPERS
+#define BOOMBOX_HELPERS
 
-namespace bb
+namespace boombox
 {
     inline float clamp(float source, float min, float max)
     {

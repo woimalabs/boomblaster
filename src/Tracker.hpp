@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_TRACKER
-#define BB_TRACKER
+#ifndef BOOMBOX_TRACKER
+#define BOOMBOX_TRACKER
 
 #include "TrackerSample.hpp"
 #include "TrackerProducerThread.hpp"
@@ -17,12 +17,12 @@
 #include "helpers/ReferencedPointer.hpp"
 #include <stdint.h>
 
-namespace bb
+namespace boombox
 {
     class Tracker
     {
     public:
-        BB_CLASS_UNCOPYABLE(Tracker);
+        BOOMBOX_CLASS_UNCOPYABLE(Tracker);
 
         static unsigned int const TrackAmount = 4;
         static unsigned int const VolumeTransitionMilliSeconds = 450;

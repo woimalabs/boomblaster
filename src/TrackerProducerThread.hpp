@@ -1,25 +1,25 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_TRACKERPRODUCERTHREAD
-#define BB_TRACKERPRODUCERTHREAD
+#ifndef BOOMBOX_TRACKERPRODUCERTHREAD
+#define BOOMBOX_TRACKERPRODUCERTHREAD
 
 #include "helpers/Thread.hpp"
 #include "helpers/Class.hpp"
 
-namespace bb
+namespace boombox
 {
     class Tracker;
 
     class TrackerProducerThread: public Thread
     {
     public:
-        BB_CLASS_UNCOPYABLE(TrackerProducerThread);
+        BOOMBOX_CLASS_UNCOPYABLE(TrackerProducerThread);
 
     protected:
         void threadFunction();

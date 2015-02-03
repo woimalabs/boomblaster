@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_AUDIORESOURCE
-#define BB_AUDIORESOURCE
+#ifndef BOOMBOX_AUDIORESOURCE
+#define BOOMBOX_AUDIORESOURCE
 
 #include "helpers/Class.hpp"
 #include "helpers/Resource.hpp"
@@ -15,12 +15,12 @@
 #include <string>
 #include <stdint.h>
 
-namespace bb
+namespace boombox
 {
     class AudioResource: public Resource
     {
     public:
-        BB_CLASS_UNCOPYABLE(AudioResource)
+        BOOMBOX_CLASS_UNCOPYABLE(AudioResource)
 
         AudioResource(FileHandle* fileHandle);
         ~AudioResource();

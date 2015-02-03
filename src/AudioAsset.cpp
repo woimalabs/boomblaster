@@ -1,17 +1,17 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#include "boomblaster/AudioAsset.hpp"
+#include "boombox/AudioAsset.hpp"
 #include "AudioEnginePrivate.hpp"
 #include "AudioAssetPrivate.hpp"
 #include "helpers/Log.hpp"
 
-namespace bb
+namespace boombox
 {
     AudioAsset::AudioAsset(const std::string& filename, bool parallelPlay, bool looping):
         private_(new AudioAssetPrivate(filename, parallelPlay, looping))

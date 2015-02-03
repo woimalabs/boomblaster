@@ -1,18 +1,18 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#include "boomblaster/AudioEngine.hpp"
+#include "boombox/AudioEngine.hpp"
 #include "AudioEnginePrivate.hpp"
 #include "helpers/Log.hpp"
 #include "helpers/Exception.hpp"
 #include "helpers/ResourceManager.hpp"
 
-namespace bb
+namespace boombox
 {
     AudioEnginePrivate* AudioEngine::private_ = NULL;
 

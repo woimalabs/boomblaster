@@ -1,18 +1,18 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_REFERENCEDPOINTER
-#define BB_REFERENCEDPOINTER
+#ifndef BOOMBOX_REFERENCEDPOINTER
+#define BOOMBOX_REFERENCEDPOINTER
 
 #include "helpers/Referenced.hpp"
 #include "helpers/Exception.hpp"
 
-namespace bb
+namespace boombox
 {
     /**
     * @class ReferencedPointer

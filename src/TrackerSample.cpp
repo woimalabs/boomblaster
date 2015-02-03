@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -11,7 +11,7 @@
 #include "helpers/Timer.hpp"
 #include "helpers/Log.hpp"
 
-namespace bb
+namespace boombox
 {
     TrackerSample::TrackerSample(const ReferencedPointer<AudioResource>& resource, float volume, bool looping, TrackerSampleObserver* owner):
         Referenced(),
@@ -81,7 +81,6 @@ namespace bb
         LOCK
         if(fadeOut_.on_ == false)
         {
-            // audioAssetInterestedFromEnd.disconnect();
             fadeOut_.start_ = Timer::milliseconds();
             fadeOut_.on_ = true;
             if(fadeTimeMilliseconds == 0)

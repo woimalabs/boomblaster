@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -22,7 +22,7 @@
 // Continuation of a previous log message on the same line.
 #define LOG_CONTINUE "\x10"
 
-namespace bb
+namespace boombox
 {
     #ifdef __ANDROID__
         #include <android/log.h>

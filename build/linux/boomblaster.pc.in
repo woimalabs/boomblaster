@@ -3,9 +3,9 @@ exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@
 
-Name: boomblaster
+Name: boombox
 Description: Audio library
 Version: 0.1
-Libs: -L${libdir} -lboomblaster -lpthread -lpulse
-Cflags: -I${includedir} -I/usr/local/include/boomblaster
+Libs: -L${libdir} -lboombox -lpthread -lpulse
+Cflags: -I${includedir} -I/usr/local/include/boombox
 Requires:

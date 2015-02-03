@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -10,7 +10,7 @@
 #include "helpers/ResourceManagerPrivate.hpp"
 #include <string>
 
-namespace bb
+namespace boombox
 {
     #ifdef ANDROID
         ResourceManager::ResourceManager(AAssetManager* androidAssetManager):
@@ -38,7 +38,6 @@ namespace bb
 
     ResourceManager::~ResourceManager()
     {
-        LOG
         private_->decrement();
     }
 

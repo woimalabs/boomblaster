@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -11,7 +11,7 @@
 #include "helpers/Exception.hpp"
 #include <string.h>
 
-namespace bb
+namespace boombox
 {
     static unsigned getUnsigned(const unsigned char buf[])
     {

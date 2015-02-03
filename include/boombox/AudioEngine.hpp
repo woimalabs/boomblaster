@@ -1,13 +1,13 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_AUDIOENGINE
-#define BB_AUDIOENGINE
+#ifndef BOOMBOX_AUDIOENGINE
+#define BOOMBOX_AUDIOENGINE
 
 #ifdef ANDROID
     #include <jni.h>
@@ -22,7 +22,7 @@
  *
  * @note This class must be existing to have and play AudioAssets.
  */
-namespace bb
+namespace boombox
 {
     class AudioEngine
     {

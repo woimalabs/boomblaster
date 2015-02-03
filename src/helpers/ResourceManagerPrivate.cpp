@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -15,7 +15,7 @@
 #include <functional>
 using std::make_pair;
 
-namespace bb
+namespace boombox
 {
     ResourceManagerPrivate* ResourceManagerPrivate::singleton_ = NULL;
     #ifdef ANDROID

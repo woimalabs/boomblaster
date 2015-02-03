@@ -1,18 +1,18 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_THREAD
-#define BB_THREAD
+#ifndef BOOMBOX_THREAD
+#define BOOMBOX_THREAD
 
 #include <pthread.h>
 #include <string>
 
-namespace bb
+namespace boombox
 {
     struct ThreadCppWrapper;
 

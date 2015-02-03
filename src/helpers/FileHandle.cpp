@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <string>
 
-namespace bb
+namespace boombox
 {
     #ifdef ANDROID
         FileHandle::FileHandle(const std::string& filename, AAssetManager* androidAssetManager):

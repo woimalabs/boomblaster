@@ -1,5 +1,5 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
@@ -11,7 +11,7 @@
 #include "helpers/Timer.hpp"
 #include "helpers/Log.hpp"
 
-namespace bb
+namespace boombox
 {
     TrackerProducerThread::TrackerProducerThread(Tracker* tracker):
         tracker_(tracker)

@@ -1,13 +1,13 @@
-lib_LTLIBRARIES = libboomblaster.la
+lib_LTLIBRARIES = libboombox.la
 
 # public headers
-library_boomblaster_includedir = $(includedir)/boomblaster
-library_boomblaster_include_HEADERS = \
-	../../include/boomblaster/AudioEngine.hpp \
-	../../include/boomblaster/AudioAsset.hpp
+library_boombox_includedir = $(includedir)/boombox
+library_boombox_include_HEADERS = \
+	../../include/boombox/AudioEngine.hpp \
+	../../include/boombox/AudioAsset.hpp
 
 # sources
-libboomblaster_la_SOURCES = \
+libboombox_la_SOURCES = \
 	../../src/helpers/Referenced.cpp \
 	../../src/helpers/ResourceManager.cpp \
 	../../src/helpers/ResourceManagerPrivate.cpp \
@@ -25,12 +25,12 @@ libboomblaster_la_SOURCES = \
 	../../src/AudioEngine.cpp \
 	../../src/AudioEnginePrivate-Pulse.cpp
 
-libboomblaster_la_CPPFLAGS = -I$(top_srcdir)/include -Wall -Wextra
-libboomblaster_la_LDFLAGS = -g -module -avoid-version -shared --disable-static
+libboombox_la_CPPFLAGS = -I$(top_srcdir)/include -Wall -Wextra
+libboombox_la_LDFLAGS = -g -module -avoid-version -shared --disable-static
 
 # pkgconfig
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = boomblaster.pc
+pkgconfig_DATA = boombox.pc
 
 EXTRA_DIST = autogen.sh
 

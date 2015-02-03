@@ -1,17 +1,17 @@
 /**
- * boomblaster
+ * boombox
  *
  * Copyright (C) 2012-2015 Woima Solutions Oy
  *
  * @author antti.peuhkurinen@woimasolutions.com
  */
 
-#ifndef BB_MUTEX
-#define BB_MUTEX
+#ifndef BOOMBOX_MUTEX
+#define BOOMBOX_MUTEX
 
 #include <pthread.h>
 
-namespace bb
+namespace boombox
 {
     class Mutex
     {
