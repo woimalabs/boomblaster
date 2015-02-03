@@ -1,4 +1,7 @@
-boomblaster
-===========
+boombox
+=======
 
-Audio library with C++ API for Linux, iOS and Android. Targeted for game development.
+Audio library for Linux, iOS and Android. Has simple to use C++ API targeted for game development.
+
+
+contact: antti.peuhkurinen@woimasolutions.com
