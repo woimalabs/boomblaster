@@ -9,6 +9,12 @@
 #ifndef BB_AUDIOENGINE
 #define BB_AUDIOENGINE
 
+#ifdef ANDROID
+    #include <jni.h>
+    #include <sys/types.h>
+    #include <android/asset_manager.h>
+    #include <android/asset_manager_jni.h>
+#endif
 #include <string>
 
 /**
@@ -21,13 +27,14 @@ namespace bb
     class AudioEngine
     {
     public:
-        /**
-         * Creates AudioEngine instance which makes possible to play AudioAssets.
-         *
-         * @param [in]  mute            Is mute on or off at start.
-         * @param [in]  resourceManager Manages loading of files
-         */
+#ifdef ANDROID
+        AudioEngine(bool mute, AAssetManager* androidAssetManager);
+#elif __linux__
+        AudioEngine(bool mute, const std::string& basePath);
+#elif __APPLE__
         AudioEngine(bool mute);
+#endif
+
         ~AudioEngine();
         static void setMute(bool);
         static bool mute();

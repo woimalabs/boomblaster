@@ -12,7 +12,6 @@
 #include "AudioResource.hpp"
 #include "helpers/ReferencedPointer.hpp"
 #include "helpers/Mutex.hpp"
-#include <sigc++/connection.h>
 #include <stdint.h>
 
 namespace bb
@@ -30,6 +29,7 @@ namespace bb
 
         virtual void handleTrackerSampleEnd(unsigned int id)
         {
+            (void)(id);
         }
     };
 

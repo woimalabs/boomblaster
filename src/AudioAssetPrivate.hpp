@@ -16,6 +16,7 @@
 #include "helpers/ReferencedPointer.hpp"
 #include "helpers/Mutex.hpp"
 #include <string>
+#include <list>
 #include <set>
 
 namespace bb

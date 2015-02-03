@@ -84,12 +84,6 @@ namespace bb
 
         std::pair<std::string, Referenced*> tmp0 = std::make_pair(id, assetPrivate);
         singleton_->assetPrivates_.insert(tmp0);
-
-        //sigc::connection connection = assetPrivate->destroy.connect(
-        //    sigc::mem_fun(singleton_, &ResourceManagerPrivate::handleResourceDestroy));
-
-        //std::pair<unsigned int, sigc::connection> tmp1 = std::make_pair(assetPrivate->id(), connection);
-        //singleton_->assetPrivateConnections_.insert(tmp1);
     }
 
     void ResourceManagerPrivate::handleReferencedDestroy(unsigned int id)
@@ -103,14 +97,8 @@ namespace bb
             Referenced* assetPrivate = i->second;
             if (assetPrivate->id() == id)
             {
-                // Remove Resource's destroy signal connection
-                //std::map<unsigned int, sigc::connection>::iterator i2;
-                //i2 = singleton_->assetPrivateConnections_.find(id);
-                //singleton_->assetPrivateConnections_.erase(i2);
-
                 // Resource will delete itself, look Referenced.hpp
                 singleton_->assetPrivates_.erase(i);
-
                 break;
             }
         }

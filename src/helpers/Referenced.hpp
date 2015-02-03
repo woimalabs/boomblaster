@@ -28,6 +28,7 @@ namespace bb
 
         virtual void handleReferencedDestroy(unsigned int id)
         {
+            (void)(id);
         }
     };
 

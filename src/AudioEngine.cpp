@@ -16,14 +16,26 @@ namespace bb
 {
     AudioEnginePrivate* AudioEngine::private_ = NULL;
 
+#ifdef ANDROID
+    AudioEngine::AudioEngine(bool mute, AAssetManager* androidAssetManager)
+#elif __linux__
+    AudioEngine::AudioEngine(bool mute, const std::string& basePath)
+#elif __APPLE__
     AudioEngine::AudioEngine(bool mute)
+#endif
     {
         if(private_ != NULL)
         {
             throw Exception("Only one AudioEngine can exist once.");
         }
-        ResourceManager tmp(".");
-        private_ = new AudioEnginePrivate(mute, tmp);
+#ifdef ANDROID
+        ResourceManager resourceManager(androidAssetManager);
+#elif __linux__
+        ResourceManager resourceManager(basePath);
+#elif __APPLE__
+        ResourceManager resourceManager();
+#endif
+        private_ = new AudioEnginePrivate(mute, resourceManager);
         LOGI("Created AudioEngine.")
     }
 
