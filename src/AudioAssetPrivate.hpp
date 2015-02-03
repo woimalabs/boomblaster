@@ -20,7 +20,7 @@
 
 namespace bb
 {
-    class AudioAssetPrivate: public Referenced
+    class AudioAssetPrivate: public Referenced, private TrackerSampleObserver
     {
     public:
         BB_CLASS_UNCOPYABLE(AudioAssetPrivate)

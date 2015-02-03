@@ -11,9 +11,6 @@ LT_INIT
 CPPFLAGS="$CPPFLAGS \
     -I../../src \
     -I../../include \
-    -I/usr/local/include/sigc++-2.0 \
-    -I/usr/local/lib/sigc++-2.0/include \
-    -I/usr/include/sigc++-2.0/ \
     -L/usr/local/lib"
 
 AC_CONFIG_FILES([Makefile boomblaster.pc])

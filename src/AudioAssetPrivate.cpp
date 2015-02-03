@@ -27,6 +27,8 @@ namespace bb
     {
         // End playing
         fadeOut(0);
+
+        while(playing_.size() > 0);
     }
 
     bool AudioAssetPrivate::play(float volume)
@@ -41,8 +43,8 @@ namespace bb
         if(parallerPlay_ || (!parallerPlay_ && playing_.size() == 0))
         {
             LOGD("parallelPlay: %d, file %s", parallerPlay_, resource_.pointer()->filename().c_str());
-            ReferencedPointer<TrackerSample> tmp(new TrackerSample(resource_, volume, false));
-            tmp.pointer()->audioAssetInterestedFromEnd = tmp.pointer()->ended.connect(sigc::mem_fun(this, &AudioAssetPrivate::handleTrackerSampleEnd));
+            ReferencedPointer<TrackerSample> tmp(new TrackerSample(resource_, volume, looping_, this));
+            // tmp.pointer()->audioAssetInterestedFromEnd = tmp.pointer()->ended.connect(sigc::mem_fun(this, &AudioAssetPrivate::handleTrackerSampleEnd));
             r = AudioEnginePrivate::play(tmp);
             if(r == true)
             {

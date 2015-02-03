@@ -15,7 +15,6 @@
 #include "helpers/FileHandle.hpp"
 #include <map>
 #include <string>
-#include <sigc++/connection.h>
 #include <vector>
 #ifdef ANDROID
     #include <jni.h>
@@ -26,7 +25,7 @@
 
 namespace bb
 {
-    class ResourceManagerPrivate: public Referenced
+    class ResourceManagerPrivate: public Referenced, private ReferencedObserver
     {
     public:
         ~ResourceManagerPrivate();
@@ -38,11 +37,11 @@ namespace bb
             static void setAndroidAssetManager(AAssetManager* androidAssetManager);
         #endif
         static bool exists(const std::string& filename);
+        void handleReferencedDestroy(unsigned int);
 
     private:
         friend class ResourceManager;
         ResourceManagerPrivate(const std::string & basePath);
-        void handleResourceDestroy(unsigned int);
         static ResourceManagerPrivate* singleton_;
         std::string basePath_;
         Mutex mutex_;
@@ -52,7 +51,7 @@ namespace bb
         // We don't hold reference count in ResourceManager
         // so we delete the listening connection when assetPrivate
         // is freed by the user.
-        std::map<unsigned int, sigc::connection> assetPrivateConnections_;
+        //std::map<unsigned int, sigc::connection> assetPrivateConnections_;
         #ifdef ANDROID
             static AAssetManager* androidAssetManager_;
         #endif

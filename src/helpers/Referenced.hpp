@@ -12,16 +12,28 @@
 #include "helpers/Lock.hpp"
 #include "helpers/Log.hpp"
 #include <cstddef>
-using std::ptrdiff_t; // NOTE: sigc++ needs this line
-#include <sigc++/signal.h>
 
 namespace bb
 {
+    class ReferencedObserver
+    {
+    public:
+        ReferencedObserver()
+        {
+        }
+
+        virtual ~ReferencedObserver()
+        {
+        }
+
+        virtual void handleReferencedDestroy(unsigned int id)
+        {
+        }
+    };
+
     class Referenced
     {
     public:
-        sigc::signal<void, unsigned int> destroy;
-
         unsigned int increment()
         {
             referenceCount_++;
@@ -34,7 +46,10 @@ namespace bb
             unsigned int r = referenceCount_;
             if (r == 0)
             {
-                destroy.emit(id_);
+                if(observer_ != NULL)
+                {
+                    observer_->handleReferencedDestroy(id_);
+                }
                 delete this;
             }
             return r;
@@ -50,10 +65,25 @@ namespace bb
             return id_;
         }
 
+        void setObserver(ReferencedObserver* observer)
+        {
+            observer_ = observer;
+        }
+
     protected:
         Referenced():
             referenceCount_(0),
-            id_(0)
+            id_(0),
+            observer_(NULL)
+        {
+            Lock lock(mutex_);
+            id_ = ++lastId_;
+        }
+
+        Referenced(ReferencedObserver* observer):
+            referenceCount_(0),
+            id_(0),
+            observer_(observer)
         {
             Lock lock(mutex_);
             id_ = ++lastId_;
@@ -66,7 +96,7 @@ namespace bb
     private:
         unsigned int referenceCount_;
         unsigned int id_;
-
+        ReferencedObserver* observer_;
         static Mutex mutex_;
         static unsigned int lastId_;
     };

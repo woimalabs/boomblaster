@@ -17,15 +17,31 @@
 
 namespace bb
 {
+    class TrackerSampleObserver
+    {
+    public:
+        TrackerSampleObserver()
+        {
+        }
+
+        virtual ~TrackerSampleObserver()
+        {
+        }
+
+        virtual void handleTrackerSampleEnd(unsigned int id)
+        {
+        }
+    };
+
     class TrackerSample: public Referenced
     {
     public:
         static unsigned int const BytesPerSample = 2;
 
-        sigc::signal<void, unsigned int /* Referenced::id */> ended;
-        sigc::connection audioAssetInterestedFromEnd;
+        //sigc::signal<void, unsigned int /* Referenced::id */> ended;
+        //sigc::connection audioAssetInterestedFromEnd;
 
-        TrackerSample(const ReferencedPointer<AudioResource>& resource, float volume, bool looping);
+        TrackerSample(const ReferencedPointer<AudioResource>& resource, float volume, bool looping, TrackerSampleObserver* owner);
         ~TrackerSample();
         float volume();
         void setVolume(float volume);
@@ -37,6 +53,7 @@ namespace bb
         // Mutex is to used to control the "ended" signal connection to parent AudioAssetPrivate
         Mutex mutex_;
         float volume_;
+        TrackerSampleObserver* owner_;
         ReferencedPointer<AudioResource> resource_;
         unsigned int byteSize_;
         unsigned int byteLocation_;

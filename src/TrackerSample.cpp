@@ -13,9 +13,10 @@
 
 namespace bb
 {
-    TrackerSample::TrackerSample(const ReferencedPointer<AudioResource>& resource, float volume, bool looping):
+    TrackerSample::TrackerSample(const ReferencedPointer<AudioResource>& resource, float volume, bool looping, TrackerSampleObserver* owner):
         Referenced(),
         volume_(volume),
+        owner_(owner),
         resource_(resource),
         byteSize_(resource.pointer()->sizeInBytes()),
         byteLocation_(0),
@@ -68,7 +69,7 @@ namespace bb
             if(end == true)
             {
                 LOCK
-                ended.emit(id());
+                owner_->handleTrackerSampleEnd(id());
             }
         }
 
@@ -80,7 +81,7 @@ namespace bb
         LOCK
         if(fadeOut_.on_ == false)
         {
-            audioAssetInterestedFromEnd.disconnect();
+            // audioAssetInterestedFromEnd.disconnect();
             fadeOut_.start_ = Timer::milliseconds();
             fadeOut_.on_ = true;
             if(fadeTimeMilliseconds == 0)
