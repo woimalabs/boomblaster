@@ -34,7 +34,6 @@ namespace boombox
 #elif __APPLE__
         AudioEngine(bool mute);
 #endif
-
         ~AudioEngine();
         static void setMute(bool);
         static bool mute();
