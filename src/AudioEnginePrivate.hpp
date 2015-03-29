@@ -38,9 +38,12 @@ namespace boombox
         BOOMBOX_CLASS_UNCOPYABLE(AudioEnginePrivate)
 
         friend class AudioEngine;
-
+#ifdef __APPLE__
+        constexpr static float const VolumeOffThreshold = 0.001f;
+#else
         static float const VolumeOffThreshold = 0.001f;
-
+#endif
+        
         struct State
         {
             enum Enum

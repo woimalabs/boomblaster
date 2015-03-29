@@ -35,9 +35,9 @@ namespace boombox
         return noErr;
     }
 
-    AudioEnginePrivate::AudioEnginePrivate(float volume, ResourceManager& resourceManager):
-        resourceManager_(resourceManager),
-        tracker_(volume)
+    AudioEnginePrivate::AudioEnginePrivate(bool mute):
+        resourceManager_(),
+        tracker_(mute == true ? 0.0f : 1.0f)
     {
         // iOS's AudioUnit initialization
         setupAudioUnitSession();

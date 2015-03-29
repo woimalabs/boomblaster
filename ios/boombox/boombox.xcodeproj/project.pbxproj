@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FBF8667A1AC80410001C29F6 /* boombox.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FBF866791AC80410001C29F6 /* boombox.h */; };
+		FBF8678B1AC842B8001C29F6 /* AudioAsset.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867811AC842B8001C29F6 /* AudioAsset.cpp */; };
+		FBF8678C1AC842B8001C29F6 /* AudioAssetPrivate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867821AC842B8001C29F6 /* AudioAssetPrivate.cpp */; };
+		FBF8678D1AC842B8001C29F6 /* AudioEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867841AC842B8001C29F6 /* AudioEngine.cpp */; };
+		FBF8678F1AC842B8001C29F6 /* AudioEnginePrivate-iOS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867861AC842B8001C29F6 /* AudioEnginePrivate-iOS.cpp */; };
+		FBF867911AC842B8001C29F6 /* AudioResource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867891AC842B8001C29F6 /* AudioResource.cpp */; };
+		FBF867981AC842BE001C29F6 /* Tracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867921AC842BE001C29F6 /* Tracker.cpp */; };
+		FBF867991AC842BE001C29F6 /* TrackerProducerThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867941AC842BE001C29F6 /* TrackerProducerThread.cpp */; };
+		FBF8679A1AC842BE001C29F6 /* TrackerSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867961AC842BE001C29F6 /* TrackerSample.cpp */; };
+		FBF867B31AC842CE001C29F6 /* FileHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF8679E1AC842CE001C29F6 /* FileHandle.cpp */; };
+		FBF867B41AC842CE001C29F6 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867A11AC842CE001C29F6 /* Log.cpp */; };
+		FBF867B51AC842CE001C29F6 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867A31AC842CE001C29F6 /* Mutex.cpp */; };
+		FBF867B61AC842CE001C29F6 /* Referenced.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867A51AC842CE001C29F6 /* Referenced.cpp */; };
+		FBF867B71AC842CE001C29F6 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867A91AC842CE001C29F6 /* ResourceManager.cpp */; };
+		FBF867B81AC842CE001C29F6 /* ResourceManagerPrivate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867AB1AC842CE001C29F6 /* ResourceManagerPrivate.cpp */; };
+		FBF867B91AC842CE001C29F6 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867AE1AC842CE001C29F6 /* Thread.cpp */; };
+		FBF867BA1AC842CE001C29F6 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867B01AC842CE001C29F6 /* Timer.cpp */; };
+		FBF867BC1AC843BE001C29F6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF867BB1AC843BE001C29F6 /* libz.dylib */; };
+		FBF867BE1AC84493001C29F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF867BD1AC84493001C29F6 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FBF866741AC80410001C29F6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				FBF8667A1AC80410001C29F6 /* boombox.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FBF866761AC80410001C29F6 /* libboombox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libboombox.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBF866791AC80410001C29F6 /* boombox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = boombox.h; sourceTree = "<group>"; };
+		FBF8667B1AC80410001C29F6 /* boombox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = boombox.m; sourceTree = "<group>"; };
+		FBF866901AC80422001C29F6 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../../include; sourceTree = "<group>"; };
+		FBF867811AC842B8001C29F6 /* AudioAsset.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AudioAsset.cpp; path = ../../src/AudioAsset.cpp; sourceTree = "<group>"; };
+		FBF867821AC842B8001C29F6 /* AudioAssetPrivate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AudioAssetPrivate.cpp; path = ../../src/AudioAssetPrivate.cpp; sourceTree = "<group>"; };
+		FBF867831AC842B8001C29F6 /* AudioAssetPrivate.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AudioAssetPrivate.hpp; path = ../../src/AudioAssetPrivate.hpp; sourceTree = "<group>"; };
+		FBF867841AC842B8001C29F6 /* AudioEngine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AudioEngine.cpp; path = ../../src/AudioEngine.cpp; sourceTree = "<group>"; };
+		FBF867861AC842B8001C29F6 /* AudioEnginePrivate-iOS.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = "AudioEnginePrivate-iOS.cpp"; path = "../../src/AudioEnginePrivate-iOS.cpp"; sourceTree = "<group>"; };
+		FBF867881AC842B8001C29F6 /* AudioEnginePrivate.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AudioEnginePrivate.hpp; path = ../../src/AudioEnginePrivate.hpp; sourceTree = "<group>"; };
+		FBF867891AC842B8001C29F6 /* AudioResource.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AudioResource.cpp; path = ../../src/AudioResource.cpp; sourceTree = "<group>"; };
+		FBF8678A1AC842B8001C29F6 /* AudioResource.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = AudioResource.hpp; path = ../../src/AudioResource.hpp; sourceTree = "<group>"; };
+		FBF867921AC842BE001C29F6 /* Tracker.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Tracker.cpp; path = ../../src/Tracker.cpp; sourceTree = "<group>"; };
+		FBF867931AC842BE001C29F6 /* Tracker.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Tracker.hpp; path = ../../src/Tracker.hpp; sourceTree = "<group>"; };
+		FBF867941AC842BE001C29F6 /* TrackerProducerThread.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = TrackerProducerThread.cpp; path = ../../src/TrackerProducerThread.cpp; sourceTree = "<group>"; };
+		FBF867951AC842BE001C29F6 /* TrackerProducerThread.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = TrackerProducerThread.hpp; path = ../../src/TrackerProducerThread.hpp; sourceTree = "<group>"; };
+		FBF867961AC842BE001C29F6 /* TrackerSample.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = TrackerSample.cpp; path = ../../src/TrackerSample.cpp; sourceTree = "<group>"; };
+		FBF867971AC842BE001C29F6 /* TrackerSample.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = TrackerSample.hpp; path = ../../src/TrackerSample.hpp; sourceTree = "<group>"; };
+		FBF8679C1AC842CE001C29F6 /* Class.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Class.hpp; path = ../../src/helpers/Class.hpp; sourceTree = "<group>"; };
+		FBF8679D1AC842CE001C29F6 /* Exception.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Exception.hpp; path = ../../src/helpers/Exception.hpp; sourceTree = "<group>"; };
+		FBF8679E1AC842CE001C29F6 /* FileHandle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = FileHandle.cpp; path = ../../src/helpers/FileHandle.cpp; sourceTree = "<group>"; };
+		FBF8679F1AC842CE001C29F6 /* FileHandle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = FileHandle.hpp; path = ../../src/helpers/FileHandle.hpp; sourceTree = "<group>"; };
+		FBF867A01AC842CE001C29F6 /* Lock.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Lock.hpp; path = ../../src/helpers/Lock.hpp; sourceTree = "<group>"; };
+		FBF867A11AC842CE001C29F6 /* Log.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Log.cpp; path = ../../src/helpers/Log.cpp; sourceTree = "<group>"; };
+		FBF867A21AC842CE001C29F6 /* Log.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Log.hpp; path = ../../src/helpers/Log.hpp; sourceTree = "<group>"; };
+		FBF867A31AC842CE001C29F6 /* Mutex.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Mutex.cpp; path = ../../src/helpers/Mutex.cpp; sourceTree = "<group>"; };
+		FBF867A41AC842CE001C29F6 /* Mutex.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Mutex.hpp; path = ../../src/helpers/Mutex.hpp; sourceTree = "<group>"; };
+		FBF867A51AC842CE001C29F6 /* Referenced.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Referenced.cpp; path = ../../src/helpers/Referenced.cpp; sourceTree = "<group>"; };
+		FBF867A61AC842CE001C29F6 /* Referenced.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Referenced.hpp; path = ../../src/helpers/Referenced.hpp; sourceTree = "<group>"; };
+		FBF867A71AC842CE001C29F6 /* ReferencedPointer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ReferencedPointer.hpp; path = ../../src/helpers/ReferencedPointer.hpp; sourceTree = "<group>"; };
+		FBF867A81AC842CE001C29F6 /* Resource.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Resource.hpp; path = ../../src/helpers/Resource.hpp; sourceTree = "<group>"; };
+		FBF867A91AC842CE001C29F6 /* ResourceManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ResourceManager.cpp; path = ../../src/helpers/ResourceManager.cpp; sourceTree = "<group>"; };
+		FBF867AA1AC842CE001C29F6 /* ResourceManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ResourceManager.hpp; path = ../../src/helpers/ResourceManager.hpp; sourceTree = "<group>"; };
+		FBF867AB1AC842CE001C29F6 /* ResourceManagerPrivate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ResourceManagerPrivate.cpp; path = ../../src/helpers/ResourceManagerPrivate.cpp; sourceTree = "<group>"; };
+		FBF867AC1AC842CE001C29F6 /* ResourceManagerPrivate.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ResourceManagerPrivate.hpp; path = ../../src/helpers/ResourceManagerPrivate.hpp; sourceTree = "<group>"; };
+		FBF867AD1AC842CE001C29F6 /* RingBuffer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = RingBuffer.hpp; path = ../../src/helpers/RingBuffer.hpp; sourceTree = "<group>"; };
+		FBF867AE1AC842CE001C29F6 /* Thread.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Thread.cpp; path = ../../src/helpers/Thread.cpp; sourceTree = "<group>"; };
+		FBF867AF1AC842CE001C29F6 /* Thread.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Thread.hpp; path = ../../src/helpers/Thread.hpp; sourceTree = "<group>"; };
+		FBF867B01AC842CE001C29F6 /* Timer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Timer.cpp; path = ../../src/helpers/Timer.cpp; sourceTree = "<group>"; };
+		FBF867B11AC842CE001C29F6 /* Timer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Timer.hpp; path = ../../src/helpers/Timer.hpp; sourceTree = "<group>"; };
+		FBF867B21AC842CE001C29F6 /* Utilities.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Utilities.hpp; path = ../../src/helpers/Utilities.hpp; sourceTree = "<group>"; };
+		FBF867BB1AC843BE001C29F6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FBF867BD1AC84493001C29F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBF866731AC80410001C29F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF867BE1AC84493001C29F6 /* Foundation.framework in Frameworks */,
+				FBF867BC1AC843BE001C29F6 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBF8666D1AC80410001C29F6 = {
+			isa = PBXGroup;
+			children = (
+				FBF867BD1AC84493001C29F6 /* Foundation.framework */,
+				FBF867BB1AC843BE001C29F6 /* libz.dylib */,
+				FBF8677F1AC84292001C29F6 /* src */,
+				FBF866901AC80422001C29F6 /* include */,
+				FBF866781AC80410001C29F6 /* boombox */,
+				FBF866771AC80410001C29F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBF866771AC80410001C29F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBF866761AC80410001C29F6 /* libboombox.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBF866781AC80410001C29F6 /* boombox */ = {
+			isa = PBXGroup;
+			children = (
+				FBF866791AC80410001C29F6 /* boombox.h */,
+				FBF8667B1AC80410001C29F6 /* boombox.m */,
+			);
+			path = boombox;
+			sourceTree = "<group>";
+		};
+		FBF8677F1AC84292001C29F6 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FBF8679B1AC842C4001C29F6 /* helpers */,
+				FBF867921AC842BE001C29F6 /* Tracker.cpp */,
+				FBF867931AC842BE001C29F6 /* Tracker.hpp */,
+				FBF867941AC842BE001C29F6 /* TrackerProducerThread.cpp */,
+				FBF867951AC842BE001C29F6 /* TrackerProducerThread.hpp */,
+				FBF867961AC842BE001C29F6 /* TrackerSample.cpp */,
+				FBF867971AC842BE001C29F6 /* TrackerSample.hpp */,
+				FBF867811AC842B8001C29F6 /* AudioAsset.cpp */,
+				FBF867821AC842B8001C29F6 /* AudioAssetPrivate.cpp */,
+				FBF867831AC842B8001C29F6 /* AudioAssetPrivate.hpp */,
+				FBF867841AC842B8001C29F6 /* AudioEngine.cpp */,
+				FBF867861AC842B8001C29F6 /* AudioEnginePrivate-iOS.cpp */,
+				FBF867881AC842B8001C29F6 /* AudioEnginePrivate.hpp */,
+				FBF867891AC842B8001C29F6 /* AudioResource.cpp */,
+				FBF8678A1AC842B8001C29F6 /* AudioResource.hpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		FBF8679B1AC842C4001C29F6 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FBF8679C1AC842CE001C29F6 /* Class.hpp */,
+				FBF8679D1AC842CE001C29F6 /* Exception.hpp */,
+				FBF8679E1AC842CE001C29F6 /* FileHandle.cpp */,
+				FBF8679F1AC842CE001C29F6 /* FileHandle.hpp */,
+				FBF867A01AC842CE001C29F6 /* Lock.hpp */,
+				FBF867A11AC842CE001C29F6 /* Log.cpp */,
+				FBF867A21AC842CE001C29F6 /* Log.hpp */,
+				FBF867A31AC842CE001C29F6 /* Mutex.cpp */,
+				FBF867A41AC842CE001C29F6 /* Mutex.hpp */,
+				FBF867A51AC842CE001C29F6 /* Referenced.cpp */,
+				FBF867A61AC842CE001C29F6 /* Referenced.hpp */,
+				FBF867A71AC842CE001C29F6 /* ReferencedPointer.hpp */,
+				FBF867A81AC842CE001C29F6 /* Resource.hpp */,
+				FBF867A91AC842CE001C29F6 /* ResourceManager.cpp */,
+				FBF867AA1AC842CE001C29F6 /* ResourceManager.hpp */,
+				FBF867AB1AC842CE001C29F6 /* ResourceManagerPrivate.cpp */,
+				FBF867AC1AC842CE001C29F6 /* ResourceManagerPrivate.hpp */,
+				FBF867AD1AC842CE001C29F6 /* RingBuffer.hpp */,
+				FBF867AE1AC842CE001C29F6 /* Thread.cpp */,
+				FBF867AF1AC842CE001C29F6 /* Thread.hpp */,
+				FBF867B01AC842CE001C29F6 /* Timer.cpp */,
+				FBF867B11AC842CE001C29F6 /* Timer.hpp */,
+				FBF867B21AC842CE001C29F6 /* Utilities.hpp */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBF866751AC80410001C29F6 /* boombox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBF8668A1AC80410001C29F6 /* Build configuration list for PBXNativeTarget "boombox" */;
+			buildPhases = (
+				FBF866721AC80410001C29F6 /* Sources */,
+				FBF866731AC80410001C29F6 /* Frameworks */,
+				FBF866741AC80410001C29F6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = boombox;
+			productName = boombox;
+			productReference = FBF866761AC80410001C29F6 /* libboombox.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBF8666E1AC80410001C29F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Woima Solutions Oy";
+				TargetAttributes = {
+					FBF866751AC80410001C29F6 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = FBF866711AC80410001C29F6 /* Build configuration list for PBXProject "boombox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FBF8666D1AC80410001C29F6;
+			productRefGroup = FBF866771AC80410001C29F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBF866751AC80410001C29F6 /* boombox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBF866721AC80410001C29F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF867B61AC842CE001C29F6 /* Referenced.cpp in Sources */,
+				FBF867991AC842BE001C29F6 /* TrackerProducerThread.cpp in Sources */,
+				FBF8678D1AC842B8001C29F6 /* AudioEngine.cpp in Sources */,
+				FBF867B41AC842CE001C29F6 /* Log.cpp in Sources */,
+				FBF867B31AC842CE001C29F6 /* FileHandle.cpp in Sources */,
+				FBF867B71AC842CE001C29F6 /* ResourceManager.cpp in Sources */,
+				FBF8679A1AC842BE001C29F6 /* TrackerSample.cpp in Sources */,
+				FBF867B81AC842CE001C29F6 /* ResourceManagerPrivate.cpp in Sources */,
+				FBF867BA1AC842CE001C29F6 /* Timer.cpp in Sources */,
+				FBF867911AC842B8001C29F6 /* AudioResource.cpp in Sources */,
+				FBF867B51AC842CE001C29F6 /* Mutex.cpp in Sources */,
+				FBF867981AC842BE001C29F6 /* Tracker.cpp in Sources */,
+				FBF8678B1AC842B8001C29F6 /* AudioAsset.cpp in Sources */,
+				FBF8678F1AC842B8001C29F6 /* AudioEnginePrivate-iOS.cpp in Sources */,
+				FBF8678C1AC842B8001C29F6 /* AudioAssetPrivate.cpp in Sources */,
+				FBF867B91AC842CE001C29F6 /* Thread.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FBF866881AC80410001C29F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FBF866891AC80410001C29F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBF8668B1AC80410001C29F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../src,
+					../../include,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FBF8668C1AC80410001C29F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					../../src,
+					../../include,
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBF866711AC80410001C29F6 /* Build configuration list for PBXProject "boombox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF866881AC80410001C29F6 /* Debug */,
+				FBF866891AC80410001C29F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBF8668A1AC80410001C29F6 /* Build configuration list for PBXNativeTarget "boombox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBF8668B1AC80410001C29F6 /* Debug */,
+				FBF8668C1AC80410001C29F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBF8666E1AC80410001C29F6 /* Project object */;
+}

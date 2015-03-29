@@ -12,6 +12,9 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <stdexcept>
+#ifdef __APPLE__
+    #import <Foundation/Foundation.h>
+#endif
 
 namespace boombox
 {
@@ -20,14 +23,14 @@ namespace boombox
         try
         {
             #ifdef __APPLE__
-                NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; // Top-level pool
+             //   NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; // Top-level pool
             #endif
 
             Thread* tmp = (Thread*)instance;
             ThreadCppWrapper::protectedCppRun(tmp);
 
             #ifdef __APPLE__
-                [pool release];  // Release the objects in the pool.
+             //   [pool release];  // Release the objects in the pool.
             #endif
 
         }

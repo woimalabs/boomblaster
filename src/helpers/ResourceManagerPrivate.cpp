@@ -13,6 +13,9 @@
 #include "helpers/Log.hpp"
 #include <utility> // std::pair
 #include <functional>
+#ifdef  __APPLE__
+    #import <Foundation/Foundation.h>
+#endif
 using std::make_pair;
 
 namespace boombox

@@ -9,7 +9,7 @@
 #ifndef BOOMBOX_RESOURCEMANAGER
 #define BOOMBOX_RESOURCEMANAGER
 
-#include <w/base/Class.hpp>
+#include "Class.hpp"
 #include <string>
 #ifdef ANDROID
     #include <jni.h>
@@ -23,7 +23,7 @@ namespace boombox
     class ResourceManager
     {
     public:
-        COPYABLE(ResourceManager);
+        BOOMBOX_CLASS_COPYABLE(ResourceManager);
 
 #ifdef ANDROID
         ResourceManager(AAssetManager* androidAssetManager);
