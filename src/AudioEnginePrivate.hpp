@@ -86,7 +86,8 @@ namespace boombox
 
         static bool play(ReferencedPointer<TrackerSample> const& sample)
         {
-            return singleton_->tracker_.place(sample);
+            //return singleton_->tracker_.place(sample);
+            return true;
         }
 
 #ifdef __ANDROID__

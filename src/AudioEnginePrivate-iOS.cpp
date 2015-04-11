@@ -256,7 +256,7 @@ namespace boombox
 
     void AudioEnginePrivate::writeCallback(size_t size, SInt16* targetBuffer)
     {
-        tracker_.getData(size, (unsigned char*)targetBuffer);
+        //tracker_.getData(size, (unsigned char*)targetBuffer);
     }
 
     void audioRouteChangeListenerCallback (void *inUserData,
