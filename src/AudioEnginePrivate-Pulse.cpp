@@ -59,6 +59,7 @@ namespace boombox
         context_(NULL),
         stream_(NULL)
     {
+        /*
         if(singleton_ != NULL)
         {
             throw Exception("AudioEngine exists! Create only one AudioEngine per process!");
@@ -110,6 +111,7 @@ namespace boombox
 
         // All done
         singleton_ = this;
+        */
     }
 
     void AudioEnginePrivate::configureStream()
