@@ -168,6 +168,7 @@ failed:
 
     AudioEnginePrivate::~AudioEnginePrivate()
     {
+        return; // HACK: destructor jams, might be related to development with iOS support!
         tracker_.shutdown();
         while(tracker_.shutdownIsDone() == false)
         {
