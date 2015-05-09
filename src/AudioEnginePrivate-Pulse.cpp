@@ -59,7 +59,6 @@ namespace boombox
         context_(NULL),
         stream_(NULL)
     {
-        /*
         if(singleton_ != NULL)
         {
             throw Exception("AudioEngine exists! Create only one AudioEngine per process!");
@@ -111,7 +110,6 @@ namespace boombox
 
         // All done
         singleton_ = this;
-        */
     }
 
     void AudioEnginePrivate::configureStream()
@@ -170,7 +168,6 @@ failed:
 
     AudioEnginePrivate::~AudioEnginePrivate()
     {
-        return; // HACK: destructor jams, might be related to development with iOS support!
         tracker_.shutdown();
         while(tracker_.shutdownIsDone() == false)
         {

@@ -43,7 +43,7 @@ namespace boombox
 #else
         static float const VolumeOffThreshold = 0.001f;
 #endif
-        
+
         struct State
         {
             enum Enum
@@ -86,8 +86,7 @@ namespace boombox
 
         static bool play(ReferencedPointer<TrackerSample> const& sample)
         {
-            //return singleton_->tracker_.place(sample);
-            return true;
+            return singleton_->tracker_.place(sample);
         }
 
 #ifdef __ANDROID__

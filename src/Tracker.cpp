@@ -27,7 +27,7 @@ namespace boombox
         {
             tracks_[i] = NULL;
         }
-        //producerThread_.start();
+        producerThread_.start();
     }
 
     Tracker::~Tracker()
@@ -59,7 +59,6 @@ namespace boombox
 
     bool Tracker::place(ReferencedPointer<TrackerSample> const& trackerSample)
     {
-        return true;
         bool r = false;
 
         LOCK
@@ -83,7 +82,6 @@ namespace boombox
 
     unsigned int Tracker::getData(unsigned int size, unsigned char* data)
     {
-        return 0;
         unsigned int r = 0;
 
         for (unsigned int i = 0; i < size; i += 2)
@@ -107,7 +105,6 @@ namespace boombox
 
     bool Tracker::produceData()
     {
-        return true;
         LOCK
 
         bool r = true;
