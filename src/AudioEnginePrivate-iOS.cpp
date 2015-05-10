@@ -41,7 +41,7 @@ namespace boombox
     {
         // iOS's AudioUnit initialization
         setupAudioUnitSession();
-        setupAudioGraph(1);
+        setupAudioGraph(mute);
 
         singleton_ = this;
     }
@@ -148,19 +148,6 @@ namespace boombox
         streamFormat_.mBytesPerPacket   = 2;
         streamFormat_.mBytesPerFrame    = 2;
 
-        // Apply format
-        result = AudioUnitSetProperty(ioUnit_,
-            kAudioUnitProperty_StreamFormat,
-            kAudioUnitScope_Output,
-            1, // input
-            &streamFormat_,
-            sizeof(streamFormat_));
-
-        if (noErr != result)
-        {
-            throw Exception("AudioUnitSetProperty (input format) failed");
-        }
-
         result = AudioUnitSetProperty(ioUnit_,
             kAudioUnitProperty_StreamFormat,
             kAudioUnitScope_Input,
@@ -173,31 +160,16 @@ namespace boombox
             throw Exception("AudioUnitSetProperty (output format) failed");
         }
 
-        // Set input callback
-        AURenderCallbackStruct callbackStruct;
-        callbackStruct.inputProc = recordingCallback;
-        callbackStruct.inputProcRefCon = this; // THIS
-        result = AudioUnitSetProperty(ioUnit_,
-            kAudioOutputUnitProperty_SetInputCallback,
-            kAudioUnitScope_Global,
-            1,
-            &callbackStruct,
-            sizeof(callbackStruct));
-
-        if (noErr != result)
-        {
-            throw Exception("AudioUnitSetProperty (recordingCallback) failed");
-        }
-
         // Set output callback
-        callbackStruct.inputProc = playbackCallback;
-        callbackStruct.inputProcRefCon = this;
+        AURenderCallbackStruct callbackStruct2;
+        callbackStruct2.inputProc = playbackCallback;
+        callbackStruct2.inputProcRefCon = this;
         result = AudioUnitSetProperty(ioUnit_,
             kAudioUnitProperty_SetRenderCallback,
             kAudioUnitScope_Global,
             0,
-            &callbackStruct,
-            sizeof(callbackStruct));
+            &callbackStruct2,
+            sizeof(callbackStruct2));
 
         if (noErr != result)
         {
@@ -231,32 +203,16 @@ namespace boombox
         }
 
         CAShow (ioUnit_);
-
-        union
-        {
-            OSStatus propertyResult;
-            char a[4];
-        } u;
-
-        Float32 realIOBufferDuration = 0.0;
-        Float32 requestedIOBufferDuration = 0.005;
-        UInt32 datasize = 4;
-
-        u.propertyResult = AudioSessionGetProperty(kAudioSessionProperty_PreferredHardwareIOBufferDuration, &datasize, &realIOBufferDuration);
-        //LOGD("Get IO Duration Time %ld %lx %c%c%c%c", u.propertyResult, u.propertyResult, u.a[3], u.a[2], u.a[1], u.a[0]);
-        //LOGD("IO Buffer Duration is %f", realIOBufferDuration);
-
-        u.propertyResult = AudioSessionSetProperty(kAudioSessionProperty_PreferredHardwareIOBufferDuration, sizeof(requestedIOBufferDuration), &requestedIOBufferDuration);
-        //LOGD("Set IO Duration Time %ld %lx %c%c%c%c", u.propertyResult, u.propertyResult, u.a[3], u.a[2], u.a[1], u.a[0]);
-
-        u.propertyResult = AudioSessionGetProperty(kAudioSessionProperty_PreferredHardwareIOBufferDuration, &datasize, &realIOBufferDuration);
-        //LOGD("Get IO Duration Time %ld %lx %c%c%c%c", u.propertyResult, u.propertyResult, u.a[3], u.a[2], u.a[1], u.a[0]);
-        //LOGD("IO Buffer Duration is %f", realIOBufferDuration);
+        
+        // Get the hardware sample rate
+        Float64 hardwareSampleRate = 44100.0f;
+        hardwareSampleRate = [[AVAudioSession sharedInstance] sampleRate];
+        LOGD("hw samplerate: %f", hardwareSampleRate);
     }
 
     void AudioEnginePrivate::writeCallback(size_t size, SInt16* targetBuffer)
     {
-        //tracker_.getData(size, (unsigned char*)targetBuffer);
+        tracker_.getData(size, (unsigned char*)targetBuffer);
     }
 
     void audioRouteChangeListenerCallback (void *inUserData,
