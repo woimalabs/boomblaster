@@ -48,20 +48,18 @@ namespace boombox
 
     AudioEnginePrivate::~AudioEnginePrivate()
     {
-        LOGI("AudioEnginePrivate::shutting down...\n");
+        LOGI("AudioEnginePrivate::shutting down...");
         OSStatus status = AudioOutputUnitStop(ioUnit_);
         if (noErr != status)
         {
             throw Exception("AudioOutputUnitStop failed");
         }
 
-        //while (state_ == ?) // TODO
-        //{
-            Timer::sleepMilliseconds(500); // wait until shutdown is completed
-        //}
+        // TODO: polish with condition
+        Timer::sleepMilliseconds(500); // wait until shutdown is completed
 
         AudioComponentInstanceDispose(ioUnit_);
-        LOGI("AudioEnginePrivate::shutdown completed.\n");
+        LOGI("AudioEnginePrivate::shutdown completed.");
     }
 
     void AudioEnginePrivate::setupAudioUnitSession()
@@ -92,6 +90,7 @@ namespace boombox
     void AudioEnginePrivate::setupAudioGraph(UInt32 busCount)
     {
         OSStatus result = noErr;
+        UInt32 outputUnitId = 0; // create id for output element unit
 
         // Setup audio units
         AudioComponentDescription iODescription;
@@ -102,40 +101,27 @@ namespace boombox
         iODescription.componentFlagsMask = 0;
 
         // Get component
-        AudioComponent inputComponent = AudioComponentFindNext(NULL, &iODescription);
+        AudioComponent component = AudioComponentFindNext(NULL, &iODescription);
 
         // Get audio units
-        result = AudioComponentInstanceNew(inputComponent, &ioUnit_);
+        result = AudioComponentInstanceNew(component, &ioUnit_);
         if (noErr != result)
         {
             throw Exception("AudioComponentInstanceNew failed");
         }
 
-        // Enable IO for recording, NOTE: To be removed!
-        UInt32 flag = 1;
-        result = AudioUnitSetProperty(ioUnit_,
-            kAudioOutputUnitProperty_EnableIO,
-            kAudioUnitScope_Input,
-            1, // input
-            &flag,
-            sizeof(flag));
-
-        if (noErr != result)
-        {
-            throw Exception("AudioUnitSetProperty failed");
-        }
-
         // Enable IO for playback
+        UInt32 data1 = 1;
         result = AudioUnitSetProperty(ioUnit_,
             kAudioOutputUnitProperty_EnableIO,
             kAudioUnitScope_Output,
-            0, // output
-            &flag,
-            sizeof(flag));
+            outputUnitId, // output
+            &data1,
+            sizeof(data1));
 
         if (noErr != result)
         {
-            throw Exception("AudioUnitSetProperty failed");
+            throw Exception("AudioUnitSetProperty (output) failed");
         }
 
         // Describe format
@@ -151,7 +137,7 @@ namespace boombox
         result = AudioUnitSetProperty(ioUnit_,
             kAudioUnitProperty_StreamFormat,
             kAudioUnitScope_Input,
-            0, // output
+            outputUnitId, // output
             &streamFormat_,
             sizeof(streamFormat_));
 
@@ -161,48 +147,36 @@ namespace boombox
         }
 
         // Set output callback
-        AURenderCallbackStruct callbackStruct2;
-        callbackStruct2.inputProc = playbackCallback;
-        callbackStruct2.inputProcRefCon = this;
+        AURenderCallbackStruct callbackStruct;
+        callbackStruct.inputProc = playbackCallback;
+        callbackStruct.inputProcRefCon = this;
         result = AudioUnitSetProperty(ioUnit_,
             kAudioUnitProperty_SetRenderCallback,
             kAudioUnitScope_Global,
-            0,
-            &callbackStruct2,
-            sizeof(callbackStruct2));
-
+            outputUnitId,
+            &callbackStruct,
+            sizeof(callbackStruct));
         if (noErr != result)
         {
             throw Exception("AudioUnitSetProperty (playbackCallback) failed");
         }
-
-        // Disable recorder buffer, we use own
-        flag = 0;
-        result = AudioUnitSetProperty(ioUnit_,
-            kAudioUnitProperty_ShouldAllocateBuffer,
-            kAudioUnitScope_Output,
-            1,
-            &flag,
-            sizeof(flag));
-
-        if (noErr != result)
-        {
-            throw Exception("AudioUnitSetProperty (output format) failed");
-        }
-
+        
+        // Init
         result = AudioUnitInitialize(ioUnit_);
         if (noErr != result)
         {
             throw Exception("AudioUnitInitialize failed");
         }
 
+        // Start
         result = AudioOutputUnitStart(ioUnit_);
         if (noErr != result)
         {
             throw Exception("AudioOutputUnitStart failed");
         }
 
-        CAShow (ioUnit_);
+        // debug print the setup
+        // CAShow (ioUnit_);
         
         // Get the hardware sample rate
         Float64 hardwareSampleRate = 44100.0f;
@@ -220,6 +194,6 @@ namespace boombox
         const void* inPropertyValue)
     {
         // TODO
-        LOGE("Stub: audioRouteChangeListenerCallback\n");
+        LOGE("Stub function called: audioRouteChangeListenerCallback");
     }
 }
