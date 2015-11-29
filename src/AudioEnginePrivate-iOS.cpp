@@ -40,6 +40,7 @@ namespace boombox
         tracker_(mute == true ? 0.0f : 1.0f)
     {
         // iOS's AudioUnit initialization
+        // Target structure is Output-Only with a Render Callback Function
         setupAudioUnitSession();
         setupAudioGraph(mute);
 
@@ -64,14 +65,11 @@ namespace boombox
 
     void AudioEnginePrivate::setupAudioUnitSession()
     {
-        AVAudioSession* session = [AVAudioSession sharedInstance];
-
-        // TODO: Specify that this object is the delegate of the audio session, so that
-        //       this object's endInterruption method will be invoked when needed.
-
-        // Set to handle interrupts (call, alarm, etc.)
         NSError *error = nil;
-        [session setCategory: AVAudioSessionCategoryAmbient error: &error];
+        AVAudioSession* session = [AVAudioSession sharedInstance];
+        
+        // Set category (closest to audio outputting game)
+        [session setCategory: AVAudioSessionCategorySoloAmbient error: &error];
         if (error != nil)
         {
             throw Exception("AVAudioSession setCategory() failed.");
@@ -90,7 +88,7 @@ namespace boombox
     void AudioEnginePrivate::setupAudioGraph(UInt32 busCount)
     {
         OSStatus result = noErr;
-        UInt32 outputUnitId = 0; // create id for output element unit
+        AudioUnitElement unitId = 0; // create id for output element unit
 
         // Setup audio units
         AudioComponentDescription iODescription;
@@ -115,16 +113,15 @@ namespace boombox
         result = AudioUnitSetProperty(ioUnit_,
             kAudioOutputUnitProperty_EnableIO,
             kAudioUnitScope_Output,
-            outputUnitId, // output
+            unitId,
             &data1,
             sizeof(data1));
-
         if (noErr != result)
         {
             throw Exception("AudioUnitSetProperty (output) failed");
         }
 
-        // Describe format
+        // Describe format for the input data coming from the render callback
         streamFormat_.mSampleRate       = 44100.00;
         streamFormat_.mFormatID         = kAudioFormatLinearPCM;
         streamFormat_.mFormatFlags      = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
@@ -137,23 +134,22 @@ namespace boombox
         result = AudioUnitSetProperty(ioUnit_,
             kAudioUnitProperty_StreamFormat,
             kAudioUnitScope_Input,
-            outputUnitId, // output
+            unitId,
             &streamFormat_,
             sizeof(streamFormat_));
-
         if (noErr != result)
         {
             throw Exception("AudioUnitSetProperty (output format) failed");
         }
 
-        // Set output callback
+        // Set callback that pulls more data
         AURenderCallbackStruct callbackStruct;
         callbackStruct.inputProc = playbackCallback;
         callbackStruct.inputProcRefCon = this;
         result = AudioUnitSetProperty(ioUnit_,
             kAudioUnitProperty_SetRenderCallback,
             kAudioUnitScope_Global,
-            outputUnitId,
+            unitId,
             &callbackStruct,
             sizeof(callbackStruct));
         if (noErr != result)
@@ -174,14 +170,10 @@ namespace boombox
         {
             throw Exception("AudioOutputUnitStart failed");
         }
-
-        // debug print the setup
-        // CAShow (ioUnit_);
         
         // Get the hardware sample rate
         Float64 hardwareSampleRate = 44100.0f;
         hardwareSampleRate = [[AVAudioSession sharedInstance] sampleRate];
-        LOGD("hw samplerate: %f", hardwareSampleRate);
     }
 
     void AudioEnginePrivate::writeCallback(size_t size, SInt16* targetBuffer)
