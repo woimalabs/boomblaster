@@ -24,7 +24,6 @@
 		FBF867B81AC842CE001C29F6 /* ResourceManagerPrivate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867AB1AC842CE001C29F6 /* ResourceManagerPrivate.cpp */; };
 		FBF867B91AC842CE001C29F6 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867AE1AC842CE001C29F6 /* Thread.cpp */; };
 		FBF867BA1AC842CE001C29F6 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBF867B01AC842CE001C29F6 /* Timer.cpp */; };
-		FBF867BC1AC843BE001C29F6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF867BB1AC843BE001C29F6 /* libz.dylib */; };
 		FBF867BE1AC84493001C29F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF867BD1AC84493001C29F6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E4F6DAF01C2B4F80005A1CCC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FBF866761AC80410001C29F6 /* libboombox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libboombox.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF866791AC80410001C29F6 /* boombox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = boombox.h; sourceTree = "<group>"; };
 		FBF8667B1AC80410001C29F6 /* boombox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = boombox.m; sourceTree = "<group>"; };
@@ -83,7 +83,6 @@
 		FBF867B01AC842CE001C29F6 /* Timer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Timer.cpp; path = ../../src/helpers/Timer.cpp; sourceTree = "<group>"; };
 		FBF867B11AC842CE001C29F6 /* Timer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Timer.hpp; path = ../../src/helpers/Timer.hpp; sourceTree = "<group>"; };
 		FBF867B21AC842CE001C29F6 /* Utilities.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = Utilities.hpp; path = ../../src/helpers/Utilities.hpp; sourceTree = "<group>"; };
-		FBF867BB1AC843BE001C29F6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FBF867BD1AC84493001C29F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -93,7 +92,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBF867BE1AC84493001C29F6 /* Foundation.framework in Frameworks */,
-				FBF867BC1AC843BE001C29F6 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +101,8 @@
 		FBF8666D1AC80410001C29F6 = {
 			isa = PBXGroup;
 			children = (
+				E4F6DAF01C2B4F80005A1CCC /* libz.tbd */,
 				FBF867BD1AC84493001C29F6 /* Foundation.framework */,
-				FBF867BB1AC843BE001C29F6 /* libz.dylib */,
 				FBF8677F1AC84292001C29F6 /* src */,
 				FBF866901AC80422001C29F6 /* include */,
 				FBF866781AC80410001C29F6 /* boombox */,
@@ -337,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -354,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
