@@ -24,7 +24,7 @@ namespace boombox
     public:
         BOOMBOX_CLASS_UNCOPYABLE(Tracker);
 
-        static unsigned int const TrackAmount = 4;
+        static unsigned int const TrackAmount = 8;
         static unsigned int const VolumeTransitionMilliSeconds = 450;
         static float const VolumeOffThreshold; // = 0.001f;
 
