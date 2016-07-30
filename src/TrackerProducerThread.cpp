@@ -26,7 +26,7 @@ namespace boombox
     {
         while (tracker_->produceData() == true)
         {
-            Timer::sleepMilliseconds(5); // TODO, signal etc replacing the sleep
+            Timer::sleepMilliseconds(1); // TODO, signal etc replacing the sleep
         }
     }
 }

@@ -43,7 +43,7 @@ namespace boombox
 
         if(parallerPlay_ || (!parallerPlay_ && playing_.size() == 0))
         {
-            LOGD("parallelPlay: %d, file %s", parallerPlay_, resource_.pointer()->filename().c_str());
+            //LOGD("parallelPlay: %d, file %s", parallerPlay_, resource_.pointer()->filename().c_str());
             ReferencedPointer<TrackerSample> tmp(new TrackerSample(resource_, volume, looping_, this));
             r = AudioEnginePrivate::play(tmp);
             if(r == true)
