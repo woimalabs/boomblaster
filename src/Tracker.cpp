@@ -20,7 +20,7 @@ namespace boombox
         mute_(muteAtStart),
         shutdownStarted_(false),
         shutdownDone_(false),
-        ringBuffer_(44100 * 2 / 20), /* one second divided by 20 to have max 50ms lag here */
+        ringBuffer_(44100 * 2 / 200), /* max 5ms lag here */
         producerThread_(this)
     {
         for(unsigned int i = 0; i < Tracker::TrackAmount; i++)
