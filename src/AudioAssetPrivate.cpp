@@ -39,8 +39,6 @@ namespace boombox
         // Sanity check for volume value
         volume = boombox::clamp(volume, 0.0f, 1.0f);
 
-        LOCK
-
         if(parallerPlay_ || (!parallerPlay_ && playing_.size() == 0))
         {
             //LOGD("parallelPlay: %d, file %s", parallerPlay_, resource_.pointer()->filename().c_str());
@@ -48,6 +46,7 @@ namespace boombox
             r = AudioEnginePrivate::play(tmp);
             if(r == true)
             {
+                LOCK
                 playing_.push_back(tmp);
             }
         }

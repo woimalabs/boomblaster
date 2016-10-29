@@ -34,7 +34,7 @@ namespace boombox
 
     private:
         void handleTrackerSampleEnd(unsigned int id);
-        Mutex mutex_;
+        Mutex mutex_; // this mutex protects the playing list
         std::list<ReferencedPointer<TrackerSample> > playing_;
         ReferencedPointer<AudioResource> resource_;
         bool parallerPlay_;
