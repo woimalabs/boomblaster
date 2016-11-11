@@ -37,7 +37,7 @@ namespace boombox
 
     AudioEnginePrivate::AudioEnginePrivate(bool mute):
         resourceManager_(),
-        tracker_(mute == true ? 0.0f : 1.0f)
+        tracker_(mute)
     {
         // iOS's AudioUnit initialization
         // Target structure is Output-Only with a Render Callback Function
