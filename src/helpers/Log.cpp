@@ -107,15 +107,15 @@ namespace boombox
                 prefixMessage (stdout, terminalColorBrown, "DEBUG", fmt, ap);
                 va_end (ap);
             }
+    
+            void Log::I(const char *fmt, ...)
+            {
+                va_list ap;
+                va_start (ap, fmt);
+                prefixMessage (stdout, terminalColorBlue, "INFO", fmt, ap);
+                va_end (ap);
+            }
         #endif
-
-        void Log::I(const char *fmt, ...)
-        {
-            va_list ap;
-            va_start (ap, fmt);
-            prefixMessage (stdout, terminalColorBlue, "INFO", fmt, ap);
-            va_end (ap);
-        }
 
         void Log::E(const char *fmt, ...)
         {
