@@ -19,7 +19,7 @@ namespace boombox
         const AudioTimeStamp* inTimeStamp, UInt32 inBusNumber, UInt32 inNumberFrames,
         AudioBufferList* ioData)
     {
-        AudioEnginePrivate::AudioEnginePrivate* self = (AudioEnginePrivate::AudioEnginePrivate*)selfPointer;
+        AudioEnginePrivate* self = (AudioEnginePrivate*)selfPointer;
         SInt16* outSamples = (SInt16*)ioData->mBuffers[0].mData;
         self->writeCallback(inNumberFrames * 2 /* 2 bytes per sample */, outSamples);
         return noErr;
